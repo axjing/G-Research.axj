@@ -126,7 +126,7 @@ def lower_shadow(df):
     return np.minimum(df['Close'], df['Open']) - df['Low']
 
 def get_features(df):
-    df_feat = df[['Count', 'Open', 'High', 'Low', 'Close', 'Volume', 'VWAP']].copy()
+    df_feat = df[['Count', 'Open', 'High', 'Low', 'Close', 'Volume', 'VWAP']]
     df_feat['Upper_Shadow'] = upper_shadow(df_feat)
     df_feat['hlco_ratio'] = hlco_ratio(df_feat)
     df_feat['Lower_Shadow'] = lower_shadow(df_feat)
